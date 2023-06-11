@@ -1,0 +1,97 @@
+.form-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.img-container > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.img-container, .form-content {
+    height: 100vh;
+    width: 50vw;
+    position: relative;
+    padding: 110px;
+}
+
+.effect {
+position: absolute;
+    width: 900px;
+    height: 350px;
+    left: -397px;
+    background: linear-gradient(169.05deg, #4894FF 8.1%, rgba(16, 134, 193, 0.359375) 74.2%, rgba(130, 239, 255, 0) 95.03%, #303132 95.03%);
+    opacity: 0.2;
+    transform: rotate(-90deg);
+    border-radius: 0px 100px 0px 1000px;
+}
+
+
+.color-background h1, .color-background h2, .color-background p {
+    color: #fff;
+}
+
+.form-content {
+    padding: 4%;
+}
+
+.form-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 32px;
+    align-items: center;
+    color: #4894FF;
+    margin-bottom: 50px;
+}
+
+.form > div {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    text-align: start;
+}
+
+.img-login-container {
+    display: block;
+}
+
+.text-login p {
+    color: #454545;
+}
+
+.lost-password, .login-container{
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 6px;
+}
+
+.register-container, .login-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.text-register-container, .text-login {
+    display: flex;
+}
+
+.text-register-container > p , .text-login > p {
+    margin-right: 5px;
+}
+
+.register, .link-login {
+    color: #4894FF;
+}
+
+.login-container.register {
+    align-items: center;
+}

@@ -1,0 +1,17 @@
+.btn-search {
+    background: #4894FF;
+    border-color: #4894FF;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.btn-login {
+    /* display: flex;
+    flex-direction: row; */
+    width: -webkit-fill-available;
+}
+
+.btn-search:hover {
+    background: rgb(24, 21, 190);
+    color: #FFFFFF;
+}
