@@ -3,6 +3,11 @@
     border-color: #4894FF;
     margin-top: 20px;
     text-align: center;
+    padding: 1.2rem 2rem;
+    border-radius: 100px;
+    color: #fff;
+    font-family: 'Inter';
+    cursor: pointer;
 }
 
 .btn-login {
@@ -12,6 +17,6 @@
 }
 
 .btn-search:hover {
-    background: rgb(24, 21, 190);
+    background: #3670c1;
     color: #FFFFFF;
 }

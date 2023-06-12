@@ -6,6 +6,7 @@ import LoginForm from './components/Login/LoginForm';
 import LoginCreate from './components/Login/LoginCreate';
 import Dashboard from './pages/Dashboard';
 import Cadastro from './pages/Cadastro';
+import Settings from './pages/Settings/Settings';
 
 function App() {
 
@@ -14,10 +15,12 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<LoginForm />} />
+            <Route path="/" element={<Cadastro />} />
+            <Route path="/login" element={<LoginForm />} />
             <Route path="/login/criar" element={<LoginCreate />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/cadastro" element={<Cadastro />} />
+            <Route path="/configuracoes" element={<Settings />} />
             {/* Apenas para teste, deve ser atualizado para :id */}
             {/* <Route path="/" element={<Home />} /> */}
           </Routes>
