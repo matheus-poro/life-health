@@ -1,0 +1,113 @@
+* {
+    transition: all 0.5s;
+}
+.effectboo {
+    position: absolute;
+    top: 29.61rem;
+    left: -24.81rem;
+    border-radius: 50%;
+    background: linear-gradient(
+      169.05deg,
+      #4894ff,
+      rgba(16, 134, 193, 0.36) 76.04%,
+      rgba(130, 239, 255, 0),
+      #303132
+    );
+    width: 46.86rem;
+    height: 45.84rem;
+    transform: rotate(-90deg);
+    transform-origin: 0 0;
+    opacity: 0.2;
+  }
+  .instance-child {
+    background: var(--color-white);
+    box-shadow: 0px 2px 30px rgba(53, 56, 90, 0.12);
+    padding: 2rem;
+    border-radius: 9px;
+    margin: 14px;
+    cursor: pointer;
+    width: 42%;
+}
+  .instance-item {
+    top: 4.56rem;
+    border-radius: var(--br-81xl);
+    background-color: var(--input-bg-btn-tag);
+    width: 4.88rem;
+    height: 4.88rem;
+  }
+  .macbook-air-2 {
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    color: var(--brand-1);
+    font-family: var(--font-inter);
+    display: flex;
+    gap: 1rem;
+    max-width: 58%;
+    margin-top: 10rem;
+    flex-wrap: wrap;
+}
+.mask-group-icon {
+    right: -60px;
+    top: 0;
+    width: 30.94rem;
+    height: 32.58rem;
+    object-fit: cover;
+    position: absolute;
+}
+
+.instance-child p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #ADACAD;
+}
+
+b.sou-paciente {
+    font-size: 21px;
+    line-height: 150%;
+    color: #4894FF;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.container {
+    position: relative;
+}
+
+.icone-cadastro {
+    background: #F6F6F6;
+    border-radius: 100px;
+    color: #CACACA;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    line-height: 68px;
+    margin-bottom: 1rem;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+    font-size: 2rem!important;
+}
+
+.instance-child:hover p, .instance-child:hover b {
+    color: #fff;
+}
+.instance-child:hover {
+    background: #007bff;
+    color: #fff;
+}
+.title-page-cadastro {
+    width: 100%;
+    display: block;
+}
+
+.title-page-cadastro h1 {
+    font-weight: 700;
+}
+
+.title-page-cadastro p {
+    color: #ADACAD;
+}

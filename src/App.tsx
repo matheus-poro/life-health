@@ -4,6 +4,8 @@ import { Provider } from "react-redux";
 import { store } from "./store/store";
 import LoginForm from './components/Login/LoginForm';
 import LoginCreate from './components/Login/LoginCreate';
+import Dashboard from './pages/Dashboard';
+import Cadastro from './pages/Cadastro';
 
 function App() {
 
@@ -14,8 +16,8 @@ function App() {
           <Routes>
             <Route path="/" element={<LoginForm />} />
             <Route path="/login/criar" element={<LoginCreate />} />
-            {/* <Route path="/hoteis" element={<Hoteis />} /> */}
-            {/* <Route path="/pages" element={<Pages />} /> */}
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/cadastro" element={<Cadastro />} />
             {/* Apenas para teste, deve ser atualizado para :id */}
             {/* <Route path="/" element={<Home />} /> */}
           </Routes>

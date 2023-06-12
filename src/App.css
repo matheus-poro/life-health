@@ -1,22 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap'); 
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap");
 body {
-  background: #FAFAFA;
+  background: #fff;
 }
 button {
-  padding: 0.875rem 2rem;
-  background: #F88441;
-  border: 1px solid #F88441;
-  border-radius: 100px;
-  color: #fff;
-  cursor: pointer;
-  text-align: center;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 130%;
-  margin-top: 0.5rem;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: unset;
 }
 
 button {
@@ -29,10 +21,41 @@ a {
 }
 
 a:hover, a:focus, a:active {
-  color: #E66319;
+  color: #4894ff;
   text-decoration: none;
 }
 
 nav.navbar {
   background: #fff;
+}
+ 
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-manrope: Manrope;
+  --font-inter: Inter;
+
+  /* font sizes */
+  --font-size-xs: 0.75rem;
+
+  /* Colors */
+  --color-white: #fff;
+  --icone-input: #adacad;
+  --color-darkgray-100: rgba(166, 166, 166, 0.12);
+  --color-dimgray: #626262;
+  --preto: #333;
+  --brand-1: #4894ff;
+
+  /* Paddings */
+  --padding-3xs: 0.63rem;
+
+  /* border radiuses */
+  --br-3xs: 10px;
+  --br-xs: 12px;
+
+  /* Effects */
+  --sombra-1: 0px 2px 30px rgba(53, 56, 90, 0.12);
 }

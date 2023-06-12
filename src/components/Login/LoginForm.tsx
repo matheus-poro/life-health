@@ -28,7 +28,7 @@ const LoginForm = () => {
             <ImgLogin />
             <div className="form-content">
                 <div className="form">
-                    <h2 className="form-title">Bem-vindo de volta !</h2>
+                    <h2 className="form-title">Bem-vindo de volta!</h2>
                     <form className="form" onSubmit={handleSubmit}>
                         <Input
                             id={"username"}
