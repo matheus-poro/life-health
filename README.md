@@ -77,6 +77,5 @@ Esta aplicação foi desenvolvida por:
         </sub>
       </a>
     </td>
-    <td >
   </tr>
 </table>
