@@ -7,6 +7,7 @@ import LoginCreate from './components/Login/LoginCreate';
 import Dashboard from './pages/Dashboard';
 import Cadastro from './pages/Cadastro';
 import Settings from './pages/Settings/Settings';
+import CadastroUser from './pages/CadastroUser';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/configuracoes" element={<Settings />} />
+            <Route path="/cadastrouser" element={<CadastroUser />} />
             {/* Apenas para teste, deve ser atualizado para :id */}
             {/* <Route path="/" element={<Home />} /> */}
           </Routes>
