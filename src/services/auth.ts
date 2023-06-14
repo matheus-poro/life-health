@@ -1,12 +1,13 @@
 
-const payload: any = { 
-    grant_type: 'Client_Credentials',
-    client_id: 'ad623adc-8fed-4706-b4ce-0fb382ba896e',
-    client_secret: '41C8Q~WVRYbpxpzxOvH9nKPXwfPlSyZeQT6dvaj~',
-    resource: 'api://myhealthease'
-}
 
-export const Authentication = async (payload: any) => {
+export const Authentication = async () => {
+
+    const payload = new URLSearchParams();
+    payload.append('grant_type', 'Client_Credentials');
+    payload.append('client_id', 'ad623adc-8fed-4706-b4ce-0fb382ba896e');
+    payload.append('client_secret', '41C8Q~WVRYbpxpzxOvH9nKPXwfPlSyZeQT6dvaj~');
+    payload.append('resource', 'api://myhealthease');
+
     try {
         const response = await fetch('https://login.microsoftonline.com/b8afe944-9d87-4b56-8a8d-0ee761167cbf/oauth2/token', {
             method: 'POST',
@@ -17,7 +18,7 @@ export const Authentication = async (payload: any) => {
                 'Accept-Encoding': 'gzip, deflate, br',
                 'Connection': 'keep-alive',
             },
-            body: payload
+            body: payload.toString(),
         })
         .then((response) => {
             console.log(response);
