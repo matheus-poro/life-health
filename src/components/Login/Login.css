@@ -114,6 +114,7 @@ label {
 
 label#demo-row-radio-buttons-group-label {
     padding-top: 2.5%;
+    font-size: 12px;
 }
 
 label#demo-row-radio-buttons-group-label > b {
