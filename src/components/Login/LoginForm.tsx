@@ -64,17 +64,17 @@ const LoginForm = () => {
                         <Error error={error && 'Dados incorretos.'} /> */}
                     </form>
                 </div>
-                <div className={"lost-password"}>
+                {/* <div className={"lost-password"}>
                     <Link to="/login/perdeu">
                         Perdeu a Senha?
                     </Link>
-                </div>
-                <Button styleBtn={"btn-search btn-login"} >Login</Button>
+                </div> */}
+                <Button styleBtn={"btn-search btn-container"} >Login</Button>
 
                 <div className={"register-container"}>
                     <div className={"text-register-container"}>
                         <p>Não tem conta?</p>
-                        <Link className={"register"} to="/login/criar">
+                        <Link className={"register"} to="/cadastro">
                             Cadastre-se
                         </Link>
                     </div>

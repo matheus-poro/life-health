@@ -16,8 +16,8 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Cadastro />} />
-            <Route path="/login" element={<LoginForm />} />
+            {/* <Route path="/" element={<Cadastro />} /> */}
+            <Route path="/" element={<LoginForm />} />
             <Route path="/login/criar" element={<LoginCreate />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/cadastro" element={<Cadastro />} />

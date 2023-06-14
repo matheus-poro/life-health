@@ -1,6 +1,6 @@
 .form-container {
     display: flex;
-    width: 100vw;
+    /* width: 100vw; */
     height: 100vh;
     justify-content: center;
     align-items: stretch;
@@ -38,6 +38,7 @@ position: absolute;
 
 .form-content {
     padding: 4%;
+    overflow: auto !important;
 }
 
 .form-title {
@@ -56,6 +57,20 @@ position: absolute;
     flex-direction: column;
 }
 
+.radio-group {
+    margin-top: 20px !important;
+}
+
+.form-privacy-policy {
+    display: flex;
+    flex-direction: row !important;
+    margin-top: 25px;
+}
+
+.form-privacy-policy > b {
+    color: #4894FF !important;
+}
+
 label {
     text-align: start;
 }
@@ -66,6 +81,10 @@ label {
 
 .text-login p {
     color: #454545;
+}
+
+.lost-password {
+    font-size: 14px;
 }
 
 .lost-password, .login-container{
@@ -82,6 +101,7 @@ label {
 
 .text-register-container, .text-login {
     display: flex;
+    font-size: 14px;
 }
 
 .text-register-container > p , .text-login > p {
@@ -92,6 +112,18 @@ label {
     color: #4894FF;
 }
 
+label#demo-row-radio-buttons-group-label {
+    padding-top: 2.5%;
+}
+
+label#demo-row-radio-buttons-group-label > b {
+    color: #4894FF;
+}
+
 .login-container.register {
     align-items: center;
+}
+
+.css-j204z7-MuiFormControlLabel-root, .MuiFormControlLabel-label, .css-u4tvz2-MuiFormLabel-root {
+    font-size: 12px !important;
 }

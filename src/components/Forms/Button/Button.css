@@ -8,9 +8,10 @@
     color: #fff;
     font-family: 'Inter';
     cursor: pointer;
+    font-size: 14px;
 }
 
-.btn-login {
+.btn-container {
     /* display: flex;
     flex-direction: row; */
     width: -webkit-fill-available;

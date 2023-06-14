@@ -11,8 +11,16 @@ const apiCall = async <T>(config: AxiosRequestConfig): Promise<AxiosResponse<T>>
       const refreshedToken = await refreshToken();
 
       if (refreshedToken) {
-        // Atualize o cabeçalho Authorization com o novo token
-        config.headers.Authorization = `Bearer ${refreshedToken}`;
+        // Verifique se config.headers existe e é um objeto
+        if (config.headers && typeof config.headers === 'object') {
+          // Atualize o cabeçalho Authorization com o novo token
+          config.headers.Authorization = `Bearer ${refreshedToken}`;
+        } else {
+          // Caso contrário, crie um novo objeto de headers com o cabeçalho Authorization
+          config.headers = {
+            Authorization: `Bearer ${refreshedToken}`,
+          };
+        }
 
         // Realize a chamada de API novamente com o novo token
         const response = await axios(config);

@@ -5,7 +5,7 @@ const ImgLogin = () => {
     return (
         <div className="img-login-container">
             <div className="img-container">
-                <img src={Img} alt="Mulher em paisagem turistica apoiada em uma pedra" className="img-content" />
+                <img src={Img} alt="Mulher medica" className="img-content" />
             </div>
 
 

@@ -1,15 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 import lifeHealthDataReducer from "./slices/lifeHealthDataSlice"
-import { FHIRServerApi } from "../services/FHIRServerApi";
+// import { FHIRServerApi } from "../services/FHIRServerApi";
 
 export const store = configureStore({
     reducer: {
         lifeHealthDataSlice: lifeHealthDataReducer,
-        [FHIRServerApi.reducerPath]: FHIRServerApi.reducer,
+        // [FHIRServerApi.reducerPath]: FHIRServerApi.reducer,
     },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-        serializableCheck: false,
-    }).concat(FHIRServerApi.middleware),
+    // middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    //     serializableCheck: false,
+    // }).concat(FHIRServerApi.middleware),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

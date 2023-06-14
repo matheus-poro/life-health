@@ -5,7 +5,13 @@ import Input from "../Forms/Input/Input";
 import Button from "../Forms/Button/Button";
 // import Error from "../Helper/Error";
 import { Link } from "react-router-dom";
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
 import "./Login.css";
+import ImgCreate from "./ImgCreate";
 
 const LoginCreate = () => {
     // const username = useForm();
@@ -29,15 +35,11 @@ const LoginCreate = () => {
 
     return (
         <section className="form-container form-container-register">
-            <div className="color-background">
-                <div className="text-register">
-                    <h1></h1>
-                    <h2></h2>
-                </div>
-            </div>
+            <div className="effect"></div>
+            <ImgCreate />
             <div className="form-content">
                 <div className="form">
-                    <h2 className="form-title">Informações pessoais</h2>
+                    <h2 className="form-title">Cadastre-se para ter acesso</h2>
                     <form className="form" onSubmit={handleSubmit}>
                         <Input
                             id={"fullname"}
@@ -75,7 +77,41 @@ const LoginCreate = () => {
                             value={"password"}
                             error={false}
                         />
-                        {/* {loading ? (
+                        <FormControl className="radio-group">
+                            {/* <FormLabel id="demo-row-radio-buttons-group-label">Gender</FormLabel> */}
+                            <RadioGroup
+                                row
+                                aria-labelledby="demo-row-radio-buttons-group-label"
+                                name="row-radio-buttons-group"
+                            >
+                                <FormControlLabel value="female" control={<Radio />} label="Mulher" />
+                                <FormControlLabel value="male" control={<Radio />} label="Homem" />
+                            </RadioGroup>
+                        </FormControl>
+                        <Input
+                            id={"dataOfBirth"}
+                            type={"data"}
+                            name={"dataOfBirth"}
+                            label={"Data de nascimento"}
+                            stylesLabel={"label-login"}
+                            stylesInput={"input-login"}
+                            stylesWrapper={undefined}
+                            stylesError={undefined}
+                            value={"dataOfBirth"}
+                            error={false}
+                        />
+                        <div className="form-privacy-policy">
+                            <RadioGroup
+                                aria-labelledby="demo-row-radio-buttons-group-label"
+                                name="row-radio-buttons-group"
+                            >
+                                <FormControlLabel value="" control={<Radio />} label="" />
+                            </RadioGroup>
+                            <FormLabel id="demo-row-radio-buttons-group-label">
+                                Ao se cadastrar voce concorda com
+                                a nossa <b>política de privacidade.</b>
+                            </FormLabel>
+                        </div>                        {/* {loading ? (
                             <Button styleBtn={"btn-search"} >Cadastrando...</Button>
                         ) : ( */}
                         {/* <Button styleBtn={"btn-search"} >Cadastrar</Button> */}
@@ -86,12 +122,12 @@ const LoginCreate = () => {
                 <div className={"login-container register"}>
                     <div className={"text-login"}>
                         <p>Já possui uma conta?</p>
-                        <Link className={"link-login"} to="/login">
+                        <Link className={"link-login"} to="/">
                             Faça login
                         </Link>
                     </div>
-                    <Button styleBtn={"btn-search"} >Cadastrar</Button>
                 </div>
+                <Button styleBtn={"btn-search btn-container"} >Cadastrar</Button>
             </div>
         </section>
     );

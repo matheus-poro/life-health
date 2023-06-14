@@ -33,6 +33,11 @@ body {
   margin: 0;
   line-height: normal;
 }
+
+html, body {
+ overflow: hidden;
+}
+
 :root {
   /* fonts */
   --font-manrope: Manrope;
