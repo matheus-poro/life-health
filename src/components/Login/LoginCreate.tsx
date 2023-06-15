@@ -20,6 +20,9 @@ import Checkbox from '@mui/material/Checkbox';
 import { initFirebase } from '../../services/firebase';
 import { Link, Navigate } from "react-router-dom";
 import { addDoc, collection } from "firebase/firestore";
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
+import axios from 'axios';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
     props,
@@ -33,6 +36,11 @@ const LoginCreate = () => {
     const [isError, setIsError] = useState<boolean>(false);
     const [dataOfBirthIsError, setDataOfBirthIsError] = useState<boolean>(false);
     const [isNavigate, setIsNavigate] = useState<boolean>(false);
+    const [isValidCRM, setIsValidCRM] = useState<boolean>(false);
+    console.log(isValidCRM);
+
+    const { userType } = useSelector((state: RootState) => state.lifeHealthDataSlice)
+
     const app = initFirebase();
     const auth = getAuth(app);
     const db = getFirestore(app);
@@ -51,7 +59,9 @@ const LoginCreate = () => {
             femaleBiologicalGender: false,
             maleBiologicalGender: false,
             dataOfBirth: '',
-            privacyPolicy: false
+            privacyPolicy: false,
+            medicalSpecialty: '',
+            crm: 0,
         },
     });
 
@@ -72,7 +82,7 @@ const LoginCreate = () => {
                 console.log("Usuário criado com sucesso", user)
 
                 // Salvar informações adicionais do usuário regular no banco de dados Firestore
-                const docRef = addDoc(collection(db, "users"), formData);
+                const docRef = addDoc(collection(db, userType), formData);
                 console.log("Document written with ID: ", docRef);
                 setOpen(true);
                 setTimeout(() => {
@@ -121,20 +131,71 @@ const LoginCreate = () => {
         name: "privacyPolicy",
     });
 
+    const medicalSpecialty = useWatch({
+        control,
+        name: "medicalSpecialty"
+    });
+
+    const crm = useWatch({
+        control,
+        name: "crm",
+    });
+
     const isDisabled = () => {
-        if (
-            fullname &&
-            email &&
-            (password.length >= 6) &&
-            (femaleBiologicalGender || maleBiologicalGender) &&
-            ((new Date(dataOfBirth).getTime() <= new Date().getTime()) ? true : false) &&
-            privacyPolicy
-        ) {
-            return false;
+        if (userType === "user") {
+            if (
+                fullname &&
+                email &&
+                (password.length >= 6) &&
+                (femaleBiologicalGender || maleBiologicalGender) &&
+                ((new Date(dataOfBirth).getTime() <= new Date().getTime()) ? true : false) &&
+                privacyPolicy
+            ) {
+                return false;
+            } else {
+                return true;
+            }
         } else {
-            return true;
+            if (
+                fullname &&
+                email &&
+                (password.length >= 6) &&
+                medicalSpecialty &&
+                crm &&
+                (femaleBiologicalGender || maleBiologicalGender) &&
+                ((new Date(dataOfBirth).getTime() <= new Date().getTime()) ? true : false) &&
+                privacyPolicy
+            ) {
+                return false;
+            } else {
+                return true;
+            }
         }
     }
+
+    // const validateCRM = async (crm: number) => {
+    //     console.log(crm);
+    //     try {
+    //         const response = await axios.get(`https://api.consultacrm.com.br/api/CRM/${crm}.json`);
+    //         const dadosMedico = response.data;
+
+    //         // Verifique os dados do médico retornado pela API
+    //         console.log(dadosMedico);
+
+    //         // Faça a validação do CRM de acordo com suas regras de negócio
+    //         if (dadosMedico.ativo) {
+    //             setIsValidCRM(false);
+    //             console.log('CRM válido');
+    //         } else {
+    //             setIsValidCRM(true);
+    //             console.log('CRM inválido');
+    //         }
+    //     } catch (error) {
+    //         setIsValidCRM(true);
+    //         console.error('Erro ao consultar o CRM:', error);
+    //     }
+    // };
+
 
     return (
         <section className="form-container form-container-register">
@@ -192,6 +253,68 @@ const LoginCreate = () => {
                                 );
                             }}
                         />
+
+                        {userType === 'doctor' ? (
+                            <>
+                                <Controller
+                                    name='medicalSpecialty'
+                                    control={control}
+                                    render={({ field: { onChange, onBlur, value, name } }) => {
+                                        return (
+                                            <Input
+                                                id={"medicalSpecialty"}
+                                                type={"text"}
+                                                name={name}
+                                                label={"Especilaidade médica"}
+                                                stylesLabel={"label-login"}
+                                                stylesInput={"input-login"}
+                                                stylesWrapper={undefined}
+                                                stylesError={undefined}
+                                                value={value}
+                                                error={false}
+                                                onChange={onChange}
+                                                onBlur={onBlur}
+                                            />
+                                        );
+                                    }}
+                                />
+
+                                <Controller
+                                    name='crm'
+                                    control={control}
+                                    render={({ field: { onChange, onBlur, value, name } }) => {
+                                        return (
+                                            <>
+                                                <Input
+                                                    id={"crm"}
+                                                    type={"number"}
+                                                    name={name}
+                                                    label={"CRM"}
+                                                    stylesLabel={"label-login"}
+                                                    stylesInput={"input-login"}
+                                                    stylesWrapper={undefined}
+                                                    stylesError={undefined}
+                                                    value={value}
+                                                    error={false}
+                                                    onChange={(e) => {
+                                                        // validateCRM(Number(e.target.value));
+                                                        onChange(e);
+                                                    }}
+                                                    onBlur={onBlur}
+                                                />
+                                                {/* {isValidCRM ? (
+                                                    <p className='text-alert'>
+                                                        <i className="fa-solid fa-circle-exclamation"></i>
+                                                        {' '}
+                                                        CRM ${value} inválido, verifique o número e tente novamente.
+                                                    </p>
+                                                ) : undefined} */}
+                                            </>
+                                        );
+                                    }}
+                                />
+                            </>
+                        ) : undefined}
 
                         <Controller
                             name='password'

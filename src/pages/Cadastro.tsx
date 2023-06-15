@@ -4,8 +4,17 @@ import MedicalServicesOutlinedIcon from '@mui/icons-material/MedicalServicesOutl
 import SentimentVerySatisfiedOutlinedIcon from '@mui/icons-material/SentimentVerySatisfiedOutlined';
 import DocImg from "../assets/img/login/img-login.png"
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setUserType } from "../store/slices/lifeHealthDataSlice";
 
 const Cadastro = () => {
+
+  const dispatch = useDispatch();
+
+  const definingUserType = (type: string) => {
+    dispatch(setUserType(type));
+  }
+
   return (
     <>
       <div className="effectboo"></div>
@@ -18,7 +27,7 @@ const Cadastro = () => {
           </div>
 
           <div className="instance-child">
-            <Link to="/login/criar">
+            <Link to="/login/criar" onClick={() => definingUserType("doctor")}>
               <div className="icone-cadastro"><MedicalServicesOutlinedIcon /> </div>
               <b className="sou-paciente">Sou médico</b>
               <p>Gostaria de ser monitorado por médicos e profisssionais da saúde </p>
@@ -26,7 +35,7 @@ const Cadastro = () => {
           </div>
 
           <div className="instance-child">
-            <Link to="/login/criar">
+            <Link to="/login/criar" onClick={() => definingUserType("user")}>
               <div className="icone-cadastro"> <SentimentVerySatisfiedOutlinedIcon /> </div>
               <b className="sou-paciente">Sou paciente</b>
               <p>Gostaria de ser monitorado por médicos e profisssionais da saúde</p>
@@ -34,9 +43,8 @@ const Cadastro = () => {
           </div>
 
         </div>
-        <img className="mask-group-icon" alt="" src={DocImg} />
+        <img className="mask-group-icon" alt="Mulher médica" src={DocImg} />
       </div>
-
     </>
 
   );
