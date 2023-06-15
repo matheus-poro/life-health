@@ -7,9 +7,6 @@ const ImgLogin = () => {
             <div className="img-container">
                 <img src={Img} alt="Mulher medica" className="img-content" />
             </div>
-
-
-
         </div>
     );
 }

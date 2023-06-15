@@ -4,7 +4,7 @@ import MedicalServicesOutlinedIcon from '@mui/icons-material/MedicalServicesOutl
 import SentimentVerySatisfiedOutlinedIcon from '@mui/icons-material/SentimentVerySatisfiedOutlined';
 import DocImg from "../assets/img/login/img-login.png"
 import { Link } from "react-router-dom";
-// import ImgLogin from "../components/Login/ImgLogin";
+
 const Cadastro = () => {
   return (
     <>

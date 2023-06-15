@@ -69,7 +69,7 @@ const LoginForm = () => {
                         Perdeu a Senha?
                     </Link>
                 </div> */}
-                <Button styleBtn={"btn-search btn-container"} >Login</Button>
+                <Button styleBtn={"btn-search btn-container"} disabled={false} >Login</Button>
 
                 <div className={"register-container"}>
                     <div className={"text-register-container"}>

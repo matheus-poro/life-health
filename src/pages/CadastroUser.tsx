@@ -96,7 +96,7 @@ function CadastroUser() {
           </form>
         </div>
 
-        <Button styleBtn={"btn-search btn-login"}>Login</Button>
+        <Button styleBtn={"btn-search btn-login"} disabled={false}>Login</Button>
       </div>
     </section>
   );
