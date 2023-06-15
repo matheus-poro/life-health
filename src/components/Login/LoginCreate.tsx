@@ -22,7 +22,7 @@ import { Link, Navigate } from "react-router-dom";
 import { addDoc, collection } from "firebase/firestore";
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
-import axios from 'axios';
+// import axios from 'axios';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
     props,
@@ -36,8 +36,7 @@ const LoginCreate = () => {
     const [isError, setIsError] = useState<boolean>(false);
     const [dataOfBirthIsError, setDataOfBirthIsError] = useState<boolean>(false);
     const [isNavigate, setIsNavigate] = useState<boolean>(false);
-    const [isValidCRM, setIsValidCRM] = useState<boolean>(false);
-    console.log(isValidCRM);
+    // const [isValidCRM, setIsValidCRM] = useState<boolean>(false);
 
     const { userType } = useSelector((state: RootState) => state.lifeHealthDataSlice)
 
@@ -74,7 +73,6 @@ const LoginCreate = () => {
     };
 
     const onSubmit = async (formData: Object) => {
-        console.log("event", formData);
 
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
