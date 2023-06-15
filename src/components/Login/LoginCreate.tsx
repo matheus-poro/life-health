@@ -18,7 +18,7 @@ import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import FormGroup from '@mui/material/FormGroup';
 import Checkbox from '@mui/material/Checkbox';
 import { initFirebase } from '../../services/firebase';
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { addDoc, collection } from "firebase/firestore";
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
@@ -32,7 +32,7 @@ const LoginCreate = () => {
     const [open, setOpen] = useState<boolean>(false);
     const [isError, setIsError] = useState<boolean>(false);
     const [dataOfBirthIsError, setDataOfBirthIsError] = useState<boolean>(false);
-
+    const [isNavigate, setIsNavigate] = useState<boolean>(false);
     const app = initFirebase();
     const auth = getAuth(app);
     const db = getFirestore(app);
@@ -63,7 +63,6 @@ const LoginCreate = () => {
         setOpen(false);
     };
 
-
     const onSubmit = async (formData: Object) => {
         console.log("event", formData);
 
@@ -77,7 +76,7 @@ const LoginCreate = () => {
                 console.log("Document written with ID: ", docRef);
                 setOpen(true);
                 setTimeout(() => {
-                    return <Link to="/dashboard" />;
+                    setIsNavigate(true)
                 }, 5000);
             })
             .catch((error) => {
@@ -121,7 +120,6 @@ const LoginCreate = () => {
         control,
         name: "privacyPolicy",
     });
-    console.log(privacyPolicy)
 
     const isDisabled = () => {
         if (
@@ -138,15 +136,14 @@ const LoginCreate = () => {
         }
     }
 
-    console.log(isDisabled())
-
-
-
     return (
         <section className="form-container form-container-register">
             <div className="effect"></div>
             <ImgCreate />
             <div className="form-content">
+                {isNavigate && (
+                    <Navigate to="/" replace={true} />
+                )}
                 <div className="form">
                     <h2 className="form-title">Cadastre-se para ter acesso</h2>
                     <form className="form" onSubmit={handleSubmit(onSubmit)} autoComplete="off">
@@ -263,6 +260,7 @@ const LoginCreate = () => {
                                         )
                                     }}
                                 />
+
                                 <Controller
                                     name='maleBiologicalGender'
                                     control={control}
@@ -345,13 +343,6 @@ const LoginCreate = () => {
                                                 control={<Checkbox />}
                                                 label=""
                                                 onChange={onChange}
-                                            // onClick={() => {
-                                            //     if (privacyPolicy) {
-                                            //         setValue('privacyPolicy', false);
-                                            //     } else {
-                                            //         setValue('privacyPolicy', true);
-                                            //     }
-                                            // }}
                                             />
                                         )
                                     }}
@@ -362,13 +353,6 @@ const LoginCreate = () => {
                                 a nossa <b>política de privacidade.</b>
                             </FormLabel>
                         </div>
-                        {/* {!privacyPolicy ? (
-                            <p className='text-alert'>
-                                <i className="fa-solid fa-circle-exclamation"></i>
-                                {' '}
-                                Para prosseguir com o cadastro, e necessario concordar com a nossa política de privacidade.
-                            </p>
-                        ) : undefined} */}
                         {/* {loading ? (
                             <Button styleBtn={"btn-search"} >Cadastrando...</Button>
                         ) : ( */}
