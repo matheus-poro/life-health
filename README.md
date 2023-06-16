@@ -19,8 +19,8 @@ O App possibilita tambem o profissional da saude alem de ver como anda seu pacie
 
 <div align="center">
   <a href="https://life-health.vercel.app/">
-    <img width="539" alt="image" src="https://github.com/matheus-poro/life-health/assets/37550557/37f4f9cb-30ee-40b1-843f-985241b7e5cf">
-    <img width="447" alt="image" src="https://github.com/matheus-poro/life-health/assets/37550557/4f30aa01-991f-425a-879e-894df4a4ad80">
+    <img width="50% alt="tela de login" src="https://github.com/matheus-poro/life-health/assets/37550557/37f4f9cb-30ee-40b1-843f-985241b7e5cf">
+    <img width="40% alt="dashboard" src="https://github.com/matheus-poro/life-health/assets/37550557/4f30aa01-991f-425a-879e-894df4a4ad80">
   </a>
 </div>
 
