@@ -1,11 +1,5 @@
 # Life Health
 
-<div align="center" >
-  <a href="">
-    <img width="210" alt="app life health" src="https://github.com/luciana-pereira/t/assets/37550557/f3d21890-5a08-47e7-837b-04f032b367d6">
-  </a> 
-</div>
-
 `CURSO: Sistemas para Internet | FIAP`
 
 `ATIVIDADE: Enterprise Challenge | Health & Life Sciences`
@@ -13,34 +7,44 @@
 ## :page_facing_up: Índice
 
 * [1. Sobre](#1-sobre)
-* [2. Planejamento Ágil](#2-Planejamento-Ágil)
-* [3. Kanban](#3-Kanban)
-* [4. Prótotipo](#4-Prótotipo)
-* [5.Tecnologias e Ferramentas externas utilizadas](#5-Tecnologias-e-Ferramentas-externas-utilizadas)
-* [6. Desenvolvedores](#6-Desenvolvedores)
+* [2. Planejamento Ágil](#2-planejamento-ágil)
+* [3. Prótotipo](#3-prótotipo)
+* [4. Tecnologias e Ferramentas externas utilizadas](#4-tecnologias-e-ferramentas-externas-utilizadas)
+* [5. Desenvolvedores](#5-desenvolvedores)
 
 ## 1. Sobre
-A Life Health é uma plataforma  de gerenciamento no cuidado do controle e monitoramento da saúde e bem estar. Desenvolvido para o curso de graduação de Sistemas para Internet da FIAP. 
+A <b>[Life Health](https://life-health.vercel.app/)</b> é uma plataforma  de gerenciamento da saúde e bem estar. Desenvolvido para o curso de graduação de Sistemas para Internet da FIAP. </br></br>
+A plataforma tem como objetivo realizar o monitoramento e controle da saúde do usuario por meio dos dados fornecido, ajudando e apontando melhorias, com a opção de habilitar para um médico poder ter acesso e poder tambem realizar o monitoramento e controle de seu paciente com sua previa autorização, auxiliando assim no bem estar. </br></br>
+O App possibilita tambem o profissional da saude alem de ver como anda seu paciente, verificar e alertar de possivel risco e orientar ou direcionar para um a tendimento ou pronto atendimento, assim como o paciente pode deixar um alerta sobre poossiveis complicações que possa estar tendo para o médico poder acessar e orienta-lo da melhor forma. </br></br>
 
+<div align="center">
+  <a href="https://life-health.vercel.app/">
+    <img width="539" alt="image" src="https://github.com/matheus-poro/life-health/assets/37550557/37f4f9cb-30ee-40b1-843f-985241b7e5cf">
+    <img width="447" alt="image" src="https://github.com/matheus-poro/life-health/assets/37550557/4f30aa01-991f-425a-879e-894df4a4ad80">
+  </a>
+</div>
 
-## 2. Planejamento Ágil :memo:
-Utilizou-se a ferramenta _Trello_ para planejar as ideais e organizar as tarefas. 
+## 2. Planejamento Ágil
+:memo:
+Utilizamos da ferramenta _Trello_ para planejar as ideais e organizar as tarefas, colocando em nosso backlog os itens prioritarios para realizar o desenvolvimento e divindo entre o grupo para realização da parte funcional do portal. 
 
-## 3. Kanban
-
-
-## 4. Prótotipo
+## 3. Prótotipo
 
 O projeto foi desenvolvido utilizando protótipo realizado no Figma conforme imagem abaixo. Para ter acesso ao prótipo e todas as informações sobre, acesse [AQUI](https://www.figma.com/file/moXR6GbkBEwn2xmTzrZjJA/Untitled-(Copy)?type=design&node-id=5%3A889&t=GRpwgYo4pvS1rj2B-1)
 
 
-## 5. Tecnologias e Ferramentas externas utilizadas
+## 4. Tecnologias e Ferramentas externas utilizadas
 
 ### FHI Server 
 A ferramenta externa [FHIR Server](https://github.com/microsoft/fhir-server) * foi utilizada, com o bjetivo de padronizar, auxiliar e facilitar o uso dos dados de saude para o monitoramento e gestão da saude e bem estar dos nossos usuarios com sua previa autorização.
 
+### Firebase 
+Está ferramento foi utilizada para autenticação de usuários, embora o Firebase não ofereça suporte direto ao FHIR Server, usamos o Firebase como um serviço de backend para o aplicativo e integrá-lo com um FHIR Server para armazenamento e recuperação de dados de saúde.</br></br> 
+Utilizamos o token de autenticação do Firebase para realizar chamadas ao FHIR Server a partir da aplicação.
 
-## 6. Desenvolvedores :octocat:
+
+## 5. Desenvolvedores 
+:octocat:
 Esta aplicação foi desenvolvida por:
 
 <table align="center">
