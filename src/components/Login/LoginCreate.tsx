@@ -48,7 +48,6 @@ const LoginCreate = () => {
         control,
         setValue,
         handleSubmit,
-        formState: { errors }
     } = useForm({
         mode: 'onChange',
         defaultValues: {
@@ -77,11 +76,10 @@ const LoginCreate = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                console.log("Usuário criado com sucesso", user)
+                console.log({ ...formData, type: userType })
 
                 // Salvar informações adicionais do usuário regular no banco de dados Firestore
-                const docRef = addDoc(collection(db, userType), formData);
-                console.log("Document written with ID: ", docRef);
+                addDoc(collection(db, userType), { ...formData, type: userType });
                 setOpen(true);
                 setTimeout(() => {
                     setIsNavigate(true)
@@ -90,7 +88,6 @@ const LoginCreate = () => {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log("Error", errorCode, errorMessage);
             });
     }
 

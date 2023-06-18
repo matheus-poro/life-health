@@ -27,7 +27,6 @@ const LoginForm = () => {
     const {
         control,
         handleSubmit,
-        formState: { errors },
     } = useForm({
         mode: 'onChange',
         defaultValues: {
@@ -48,9 +47,8 @@ const LoginForm = () => {
 
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                const user = userCredential.user;
-                console.log("Usuário logado com sucesso", user);
-
+                // const user = userCredential.user;
+                // console.log("Usuário logado com sucesso", user);
                 setIsNavigate(true);
             })
             .catch((error) => {

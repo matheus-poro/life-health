@@ -111,3 +111,39 @@ b.sou-paciente {
 .title-page-cadastro p {
     color: #ADACAD;
 }
+.boxAvatar {
+    left: 50px;
+    position: relative;
+}
+
+.boxProfile {
+    display: flex;
+}
+
+h6.titleDashboard {
+    color: #4894ff;
+    text-align: center;
+    font-weight: 600;
+}
+
+p.nameDashboard {
+    letter-spacing: -0.03em;
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: #4894ff;
+    margin-top: 1rem;
+}
+
+.boxConteiner {
+    display: flex;
+    gap: 20px;
+}
+
+.boxContent {
+    flex-grow: 1;
+    width: 30%;
+    border: 1px solid #e8e2e2;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
