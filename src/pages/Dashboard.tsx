@@ -98,10 +98,8 @@ const Dashboard: React.FC = () => {
 
       if (data[0]) {
         if (searchEmail === data[0].email) {
-          // console.log("Usuario localizado", data[0]);
           setUserData(data[0]);
         } else {
-          // console.log("Usuario não localizado");
           setUserType('doctor');
         }
       } else {
@@ -176,7 +174,6 @@ const Dashboard: React.FC = () => {
               <h6 className="titleDashboard">Atividade física</h6>
               <p></p>
               <br />
-              {/* <PhysicalActivityChart /> */}
             </Box>
           </div>
           <div className="boxConteiner">
