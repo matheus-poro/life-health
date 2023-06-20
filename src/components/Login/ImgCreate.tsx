@@ -7,9 +7,6 @@ const ImgCreate = () => {
             <div className="img-container">
                 <img src={Img} alt="Medidor de presão" className="img-content" />
             </div>
-
-
-
         </div>
     );
 }

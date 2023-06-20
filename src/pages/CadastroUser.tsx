@@ -7,17 +7,11 @@ import Input from "../components/Forms/Input/Input";
 import Button from "../components/Forms/Button/Button";
 
 function CadastroUser() {
-  // const username = useForm("Username");
-  // const password = useForm("password");
-
-  // const { userLogin, error, loading }: any = useContext(UserContext);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>): void {
     throw new Error("Function not implemented.");
   }
-  // if (username.validate() && password.validate()) {
-  //     userLogin(username.value, password.value);
-  // }
+
 
   return (
     <section className="form-container">
