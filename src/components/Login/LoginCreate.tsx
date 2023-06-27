@@ -65,9 +65,8 @@ const LoginCreate = () => {
 
     // Fecha a snackbar de alerta ao clicar fora 
     const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
-        if (reason === 'clickaway') {
+        if (reason === 'clickaway')
             return;
-        }
         setOpen(false);
     };
 
